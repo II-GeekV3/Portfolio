@@ -1,0 +1,329 @@
+/* Styles pour le CV */
+#cv embed {
+    width: 100%;
+    max-width: 800px; /* Limitez la largeur maximale pour éviter de trop étirer le PDF */
+    height: 1000px; /* Ajustez la hauteur selon la taille du contenu du PDF */
+    margin: 0 auto; /* Centrez le PDF horizontalement */
+    display: block;
+    margin-bottom: 50px;
+}
+
+/* Reset CSS pour une meilleure compatibilité entre les navigateurs */
+html, body, header, nav, ul, li, a, section, footer {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Style de base */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 50px;
+}
+
+section h2 {
+    margin-bottom: 30px;
+}
+
+.project {
+    margin-bottom: 30px;
+}
+
+/* Style pour le pied de page */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-top: 30px; /* Ajoutez une marge en haut du pied de page */
+}
+
+
+footer p {
+    margin: 0;
+}
+
+/* Style spécifique pour les liens */
+a {
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour la section Centres d'intérêts */
+.special-section {
+    background-color: #f0f0f0; /* Couleur de fond différente */
+    padding: 50px; /* Marge intérieure augmentée */
+    text-align: center; /* Alignement du texte au centre */
+}
+
+.special-section h3 {
+    color: #333; /* Couleur de texte différente pour les titres */
+}
+
+.special-section .interests {
+    display: flex;
+    justify-content: space-around;
+}
+
+.special-section .interest {
+    text-align: center; /* Alignement du texte au centre */
+}
+
+.special-section .interest p {
+    margin-top: 10px; /* Marge supérieure pour l'espace entre l'image et le texte */
+}
+
+/* Effet de survol sur les images */
+.special-section .interest img {
+    transition: transform 0.3s ease; /* Transition douce */
+}
+
+.special-section .interest img:hover {
+    transform: scale(1.1); /* Agrandissement de l'image au survol */
+}
+/* Styles pour la section Mes qualités */
+#qualities {
+    background-color: #f0f0f0; /* Couleur de fond différente */
+    padding: 50px; /* Marge intérieure augmentée */
+    text-align: center; /* Alignement du texte au centre */
+}
+
+#qualities h3 {
+    color: #333; /* Couleur de texte différente pour les titres */
+}
+
+#qualities .qualities {
+    display: flex;
+    justify-content: space-around;
+}
+
+#qualities .quality {
+    text-align: center; /* Alignement du texte au centre */
+}
+
+#qualities .quality p {
+    margin-top: 10px; /* Marge supérieure pour l'espace entre l'image et le texte */
+}
+
+/* Effet de survol sur les images */
+#qualities .quality img {
+    transition: transform 0.3s ease; /* Transition douce */
+}
+
+#qualities .quality img:hover {
+    transform: scale(1.1); /* Agrandissement de l'image au survol */
+}
+
+/* Styles pour la section Mes compétences */
+#skills {
+    background-color: #f0f0f0; /* Couleur de fond différente */
+    padding: 50px; /* Marge intérieure augmentée */
+    text-align: center; /* Alignement du texte au centre */
+}
+
+#skills h3 {
+    color: #333; /* Couleur de texte différente pour les titres */
+}
+
+#skills .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#skills .skill {
+    width: 200px;
+    margin: 20px;
+}
+
+#skills .skill h4 {
+    margin-bottom: 5px; /* Espacement entre le nom de la compétence et la jauge */
+}
+
+/* Style pour la jauge de compétence */
+#skills .meter {
+    height: 20px;
+    background-color: #ddd; /* Couleur de fond de la jauge */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#skills .meter .progress {
+    display: block;
+    height: 100%;
+    background-color: #2992dd; /* Couleur de la jauge remplie */
+    width: 0;
+    transition: width 2s ease-in-out;
+    position: relative;
+    line-height: 20px;
+    text-align: center;
+    color: #fff; /* Couleur du texte */
+}
+
+/* Style pour la section Formation */
+#formation {
+    margin-top: 20px; /* Marge supérieure pour l'espace */
+    margin-bottom: 50px;
+}
+
+#formation .accordion {
+    border: 1px solid #ddd; /* Bordure pour l'élément d'accordéon */
+    border-radius: 5px; /* Bordure arrondie */
+}
+
+#formation .accordion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#formation .accordion-item:hover {
+    background-color: #f0f0f0; /* Changement de couleur au survol */
+}
+
+#formation .accordion-title {
+    flex: 1;
+    margin-left: 10px;
+}
+
+#formation .accordion-content {
+    padding: 10px 20px;
+    display: none; /* Par défaut, le contenu est caché */
+}
+
+#formation .accordion-content.active {
+    display: block; /* Affichage du contenu lorsque l'élément est actif */
+}
+
+#formation .accordion-icon {
+    margin-right: 10px;
+}
+
+#formation .accordion-icon i {
+    display: none; /* Par défaut, les icônes sont cachées */
+}
+
+#formation .accordion-item.active .accordion-icon i:first-child {
+    display: inline; /* Affichage de l'icône plus */
+}
+
+#formation .accordion-item.active .accordion-icon i:last-child {
+    display: none; /* Caché l'icône moins */
+}
+/* Style pour la séparation entre les sections */
+.separator {
+    height: 2px; /* Hauteur de la ligne de séparation */
+    background-color: #ddd; /* Couleur de la ligne de séparation */
+    margin: 20px 0; /* Marge supérieure et inférieure pour l'espace */
+}
+/* Ajout du style pour les expériences */
+#formation .accordion-content ul {
+    list-style-type: none; /* Suppression des puces */
+    padding: 0; /* Suppression du padding */
+}
+
+#formation .accordion-content ul li {
+    margin-bottom: 10px; /* Marge entre chaque expérience */
+}
+/* Positionnement du menu déroulant */
+#bts-sio-dropdown {
+    position: relative; /* Définit la position relative pour que les éléments enfants soient positionnés par rapport à lui */
+    height: 100%; /* Définissez une hauteur */
+}
+
+/* Style pour le menu déroulant */
+#bts-sio-menu {
+    display: none;
+    position: absolute; /* Position absolue pour positionner le menu par rapport à l'élément parent */
+    top: 100%; /* Place le menu déroulant juste en dessous de l'élément parent */
+    left: 0; /* Aligner le menu déroulant à gauche de l'élément parent */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 5px; /* Ajoutez une marge en haut pour éviter de se coller à l'élément parent */
+}
+
+#bts-sio-menu li {
+    display: block;
+}
+
+/* Affichage du menu déroulant au survol de l'élément */
+#bts-sio-dropdown:hover #bts-sio-menu {
+    display: block;
+}
+#bts-sio-menu li a {
+    color: black; /* Couleur du texte en noir */
+    text-decoration: none; /* Supprimer les soulignements des liens */
+}
+.mySlides {
+    display: none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+

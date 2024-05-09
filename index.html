@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<script src="JS.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+<script src="JS.js"></script>
+    <header>
+        <h1>Lignel Flavien</h1>
+        <nav>
+            <ul>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="">projets</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li id="bts-sio-dropdown">
+                    <a href="#">BTS SIO</a>
+                    <ul id="bts-sio-menu">
+                        <li><a href="E4.html">E4</a></li>
+                        <li><a href="E5.html">E5</a></li>
+                        <li><a href="SIO.html">BTS SIO ?</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <!-- Insérez ici vos projets avec des liens vers les pages détaillées -->
+        <div class="project">
+            <h3>Nom du Projet 1</h3>
+            <p>Description du projet.</p>
+            <a href="projet1.html">Voir plus</a>
+        </div>
+        <div class="project">
+            <h3>Nom du Projet 2</h3>
+            <p>Description du projet.</p>
+            <a href="projet2.html">Voir plus</a>
+        </div>
+        
+    </section>
+
+    <section id="about">
+        <h2>À Propos de moi</h2>
+        <p>Je m’appelle Flavien Lignel, j’ai 20 ans.
+            Je suis en cour d'optention de mon BTS SIO option SLAM a ScholarFab a caen.
+            J'ai réalisé ce Portfolio au cours de ma formation du BTS SIO option SLAM
+            Je recherche actuellement une Licence Concepteur de Systèmes d’Information
+            (Cybersécurité logicielle et réseau) en alternance qui me permeterais d'atteindre mon objectif un master en Cybersécurité.
+        </p>
+        <a href="cv.html">Voir mon CV</a>
+        <br>
+        <a href="">Voir mon tableau E4</a>
+    </section>
+
+    <section id="interests" class="special-section">
+        <h3>Centres d'intérêts</h3>
+        <div class="interests">
+            <div class="interest">
+                <img src="images/bigo.png" alt="Bigo">
+                <p>Les nouvelles technologies</p>
+            </div>
+            <div class="interest">
+                <img src="images/game-control.png" alt="Jeux vidéo">
+                <p>Les jeux vidéos </p>
+            </div>
+            <div class="interest">
+                <img src="images/musique.png" alt="Musique">
+                <p>La musique</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="qualities" class="special-section">
+        <h3>Mes qualités</h3>
+        <div class="qualities">
+            <div class="quality">
+                <img src="images/equipe.png" alt="Esprit d'équipe">
+                <p>Esprit d'équipe
+                    <br> Je privilégie grandement le Travail d’équipe. 
+                    Je pense que la cohésion au sein d’une entreprise est une des clés majeure au bon déroulement de projets.
+                </p>
+            </div>
+            <div class="quality">
+                <img src="images/ordre.png" alt="Organisation">
+                <p>Organisation 
+                    <br> Fixation de délais pour réaliser les objectifs attendus dans les temps. 
+                    La mise en place de suivi des projets tout au long de leur réalisation doit être très sérieusement prise en compte.
+                </p>
+            </div>
+            <div class="quality">
+                <img src="images/oreilles.png" alt="Écoute">
+                <p>Écoute
+                    <br> Prend le temps d’écouter et d’analyser les tâches qui me sont confiées pour répondre au maximum aux besoins demandés.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills" class="special-section">
+        <h3>Mes compétences</h3>
+        <div class="skills">
+            <div class="skill">
+                <h4>HTML</h4>
+                <div class="meter" style="width: 80%">
+                    <span class="progress" style="width: 80%">80%</span>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>CSS</h4>
+                <div class="meter" style="width: 80%">
+                    <span class="progress" style="width: 80%">80%</span>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>JavaScript</h4>
+                <div class="meter" style="width: 60%">
+                    <span class="progress" style="width: 60%">60%</span>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>C#</h4>
+                <div class="meter" style="width: 60%">
+                    <span class="progress" style="width: 60%">60%</span>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>Python</h4>
+                <div class="meter" style="width: 80%">
+                    <span class="progress" style="width: 80%">80%</span>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>PHP</h4>
+                <div class="meter" style="width: 70%">
+                    <span class="progress" style="width: 70%">70%</span>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+        
+    <section id="formation">
+        <h2>Formation</h2>
+        <div class="accordion">
+            <div class="accordion-item" data-tab="1">
+                <span class="accordion-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                </span>
+                <a class="accordion-title" tabindex="0">BAC STi2D Option SIN</a>
+            </div>
+            <div class="accordion-content" id="accordion-content-1" aria-expanded="false" aria-hidden="true">
+                <p>Baccalauréat : STI2D 2021 – 2022 <br>
+                    Paul Cornu – LISIEUX <br>
+                    Le bac technologique Sciences et Technologies de l’Industrie et du
+                    Développement Durable (STI2D) et l’option Systèmes d’Informations
+                    et Numérique (SIN) m’ont apporté les compétences nécessaires
+                    Pour développer des solutions intégrées, matériels et logiciels utiles
+                    À la conception de produits.
+                </p>
+            </div>
+        </div>
+        <div class="separator"></div> <!-- Séparateur -->
+        <div class="accordion">
+            <div class="accordion-item" data-tab="2">
+                <span class="accordion-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                </span>
+                <a class="accordion-title" tabindex="0">BTS SIO Option SLAM</a>
+            </div>
+            <div class="accordion-content" id="accordion-content-2" aria-expanded="false" aria-hidden="true">
+                <p> BTS : Services Informatiques aux Organisations 2022 – 2024 <br>
+                    Scholar Fab – CAEN <br>
+                    Après avoir réalise un bac STI2D, je poursuis mon cursus scolaire en
+                    intégrant un BTS SIO dans l’établissement Scholar Fab ce qui me
+                    permet d’approfondir mes connaissances</p>
+            </div>
+        </div>
+        <div class="separator"></div> <!-- Séparateur -->        
+    </section>
+    
+    <section id="formation">
+        <h2>Expérience</h2>
+        <div class="accordion">
+            <div class="accordion-item" data-tab="1">
+                <span class="accordion-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                </span>
+                <a class="accordion-title" tabindex="0">Formatage</a>
+            </div>
+            <div class="accordion-content" id="accordion-content-1" aria-expanded="false" aria-hidden="true">
+                <p>Formatage: 01/2021 - Aujourd’hui<br>
+                    MAROLLES - Freelance <br>
+                    Mise en place d’anti-virus, nettoyage d’ordinateurs.
+                </p>
+            </div>
+        </div>
+        <div class="separator"></div> <!-- Séparateur -->
+        <div class="accordion">
+            <div class="accordion-item" data-tab="2">
+                <span class="accordion-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                </span>
+                <a class="accordion-title" tabindex="0">Développeur web</a>
+            </div>
+            <div class="accordion-content" id="accordion-content-2" aria-expanded="false" aria-hidden="true">
+                <p> Développeur web: 05/2023 – 06/2023 et 01/2024 – 02/2024 <br>
+                    Équip’Horse – MAROLLES – Stage <br>
+                    Travaux d’intégration sous WordPress.
+                    Création d’un site internet, codage des programmes et intégration des
+                    contenus selon le cahier des charges établi.</p>
+            </div>
+        </div>
+        <div class="separator"></div> <!-- Séparateur -->
+        <div class="accordion">
+            <div class="accordion-item" data-tab="2">
+                <span class="accordion-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                </span>
+                <a class="accordion-title" tabindex="0">Stage</a>
+            </div>
+            <div class="accordion-content" id="accordion-content-2" aria-expanded="false" aria-hidden="true">
+                <p>  Stagiaire 05/2019 – 06/2019 <br>
+                    Espace Émeraude – MAROLLES <br>
+                    Gestion des incidents et des problèmes sur les systèmes et les réseaux
+                    informatiques, établissement de rapports.
+                    Mise en place d’une cartographie du réseau.
+                    Installation des nouveaux ordinateurs : mise en place dans le réseau
+                    Installation et déploiement d’anti-virus.</p>
+            </div>
+        </div>        
+    </section>
+    
+    
+    
+    
+    
+
+    <footer>
+        <p>&copy; 2024 Lignel Flavien</p>
+    </footer>
+
+    <script src="JS.js"></script>
+
+</body>
+</html>

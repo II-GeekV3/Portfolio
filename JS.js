@@ -44,5 +44,22 @@ function showSlides() {
     slides[slideIndex-1].style.display = "block";  
     setTimeout(showSlides, 4000); // Changez 2000 pour la durée de chaque image en millisecondes
 }
+// Récupération de tous les éléments de texte des options
+const optionTexts = document.querySelectorAll('#debouches ul li');
+
+// Parcours de chaque élément de texte des options
+optionTexts.forEach(option => {
+    // Ajout d'un écouteur d'événement pour le survol de chaque élément de texte
+    option.addEventListener('mouseover', () => {
+        // Changement de la couleur de fond lors du survol
+        option.style.backgroundColor = 'lightgray';
+    });
+
+    // Ajout d'un écouteur d'événement pour le départ du survol de chaque élément de texte
+    option.addEventListener('mouseout', () => {
+        // Rétablissement de la couleur de fond d'origine
+        option.style.backgroundColor = 'transparent';
+    });
+});
 
 

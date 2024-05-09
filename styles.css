@@ -323,6 +323,27 @@ a:hover {
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+/* Style de base pour les options */
+#debouches ul li {
+    padding: 10px;
+    transition: background-color 0.3s; /* Transition pour le changement de couleur de fond */
+}
+
+/* Style lors du survol */
+#debouches ul li:hover {
+    background-color: lightgray;
+}
+.option {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.option:hover {
+    border-color: #333;
+}
+
 
 
 

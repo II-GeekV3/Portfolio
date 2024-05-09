@@ -343,7 +343,19 @@ a:hover {
 .option:hover {
     border-color: #333;
 }
+.project-image {
+    text-align: center; /* Centre le contenu horizontalement */
+    margin-top: 20px; /* Ajoute un espace en haut */
+}
 
+.project-image img {
+    display: block; /* Assure que l'image est affichée en bloc */
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+.project-image p {
+    margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
+}
 
 
 

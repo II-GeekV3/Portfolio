@@ -56,6 +56,36 @@ document.addEventListener('DOMContentLoaded', function() {
                     projectContent = `
                         <h3>Détails du Projet : TP TodoList</h3>
                         <p>
+                        Ce projet consitez a réalisé une TodoList a partir de python: La TodoList, ou liste de tâches, est un outil simple et pratique pour organiser vos activités quotidiennes. En notant vos tâches à accomplir, vous pouvez garder une vue d'ensemble sur vos obligations et rester concentré sur vos priorités.
+                        </p>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                    `;
+                    showSlides(); // Ajoutez l'appel à showSlides() ici
+                    projectDetails.style.display = 'block';
+                    break;
+                case '3':
+                    projectContent = `
+                        <h3>Détails du Projet : Site web réalisé en groupe</h3>
+                        <p>
                         Ce projet consitez a réalisé une TodoList a partir de python 
 
                         </p>
@@ -83,7 +113,111 @@ document.addEventListener('DOMContentLoaded', function() {
                     showSlides(); // Ajoutez l'appel à showSlides() ici
                     projectDetails.style.display = 'block';
                     break;
-                case '3':    
+                case '4':
+                    projectContent = `
+                        <h3>Détails du Projet : Projet Wordpress</h3>
+                        <p>
+                        Ce projet est un travail réalisé en groupe, où chacun a contribué avec plusieurs pages créées individuellement, comprenant des liens internes obligatoires, ainsi que la mise en service d'un site sous WordPress.                        </p>
+                        <section id="cv">
+                             <embed src="DOCUMENTATION WORDPRESS.pdf" type="application/pdf" />
+                        </section>
+                    `;
+                    showSlides(); // Ajoutez l'appel à showSlides() ici
+                    projectDetails.style.display = 'block';
+                    break;
+                case '5':
+                    projectContent = `
+                        <h3>Détails du Projet : Projet Zabbix</h3>
+                        <p>
+                        Ce projet consitez a réalisé une TodoList a partir de python 
+                        </p>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                    `;
+                    showSlides(); // Ajoutez l'appel à showSlides() ici
+                    projectDetails.style.display = 'block';
+                    break;
+                case '6':
+                     projectContent = `
+                        <h3>Détails du Projet : Projet Sirotez&Melangez Administrateur</h3>
+                        <p>
+                        Ce projet est l'un des deux projets que j'ai choisis de présenter lors de mon épreuve E5 pour mon BTS. Je vous prie de consulter le projet directement sur ce lien <a href="E5.html">ici</a>.</p>
+                        </p>                       
+                    `;
+                    showSlides(); // Ajoutez l'appel à showSlides() ici
+                    projectDetails.style.display = 'block';
+                    break;
+                case '7':
+                    projectContent = `
+                        <h3>Détails du Projet : Projet Sirotez&Melangez</h3>
+                        <p>
+                        Ce projet est l'un des deux projets que j'ai choisis de présenter lors de mon épreuve E5 pour mon BTS. Je vous prie de consulter le projet directement sur ce lien <a href="E5.html">ici</a>.</p> 
+                        </p>
+                    `;
+                    showSlides(); // Ajoutez l'appel à showSlides() ici
+                    projectDetails.style.display = 'block';
+                    break;  
+                case '8':
+                    projectContent = `
+                        <h3>Détails du Projet : Portfolio</h3>
+                        <p>
+                        Ce projet consitez a réalisé une TodoList a partir de python             
+                        </p>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                    `;
+                    showSlides(); // Ajoutez l'appel à showSlides() ici
+                    projectDetails.style.display = 'block';
+                    break;
+                case '9':
+                    projectContent = `
+                        <h3>Détails du Projet : Projet GLPI</h3>
+                        <p>
+                        GLPI est une solution logicielle robuste dédiée à la gestion efficace des ressources informatiques au sein des organisations. De la gestion des actifs matériels et logiciels à la prise en charge des tickets d'assistance, GLPI offre une plateforme centralisée pour optimiser les opérations informatiques. Ce projet explore en détail les fonctionnalités clés de GLPI, son déploiement et ses avantages, offrant ainsi un aperçu précieux pour les professionnels cherchant à améliorer leur gestion informatique.
+                        </p>
+                        <section id="cv">
+                             <embed src="TP_GLPI.pdf" type="application/pdf" />
+                        </section>
+                    `;
+                    showSlides(); // Ajoutez l'appel à showSlides() ici
+                    projectDetails.style.display = 'block';
+                    break;
                 // Ajoutez les cas pour les autres projets ici
                 default:
                     projectContent = '<p>Détails du projet non disponibles pour le moment.</p>';

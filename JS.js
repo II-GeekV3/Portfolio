@@ -30,20 +30,36 @@ btsSioDropdown.addEventListener('mouseout', () => {
     // Masquage du menu déroulant
     btsSioMenu.style.display = 'none';
 });
-var slideIndex = 1; // Initialise slideIndex à 1 au lieu de 0
-showSlides();
+var slideIndex1 = 0;
+var slideIndex2 = 0;
 
-function showSlides() {
+showSlides1();
+showSlides2();
+
+function showSlides1() {
     var i;
-    var slides = document.getElementsByClassName("mySlides");
+    var slides = document.querySelectorAll('.slideshow-container .mySlides');
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+        slides[i].style.display = "none";
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 4000); // Changez 2000 pour la durée de chaque image en millisecondes
+    slideIndex1++;
+    if (slideIndex1 > slides.length) { slideIndex1 = 1 }
+    slides[slideIndex1 - 1].style.display = "block";
+    setTimeout(showSlides1, 4000); // Changez 4000 pour la durée de chaque image en millisecondes
 }
+
+function showSlides2() {
+    var i;
+    var slides = document.querySelectorAll('.slideshow-container2 .mySlides');
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex2++;
+    if (slideIndex2 > slides.length) { slideIndex2 = 1 }
+    slides[slideIndex2 - 1].style.display = "block";
+    setTimeout(showSlides2, 4000); // Changez 4000 pour la durée de chaque image en millisecondes
+}
+
 
 // Récupération de tous les éléments de texte des options
 const optionTexts = document.querySelectorAll('#debouches ul li');

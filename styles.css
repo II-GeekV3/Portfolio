@@ -292,9 +292,6 @@ a:hover {
     color: black; /* Couleur du texte en noir */
     text-decoration: none; /* Supprimer les soulignements des liens */
 }
-.mySlides {
-    display: none;
-}
 
 .prev, .next {
     cursor: pointer;
@@ -369,17 +366,34 @@ a:hover {
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    margin: auto;
+    margin: 0 auto;
+    display: flex; /* Utiliser le modèle de boîte flexible */
+    justify-content: center; /* Centrer le contenu horizontalement */
+    align-items: center; /* Centrer le contenu verticalement */
+    height: 100vh
   }
-  
-  .mySlides {
+.slideshow-container2 {
+    max-width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    display: flex; /* Utiliser le modèle de boîte flexible */
+    justify-content: center; /* Centrer le contenu horizontalement */
+    align-items: center; /* Centrer le contenu verticalement */
+    height: 100vh
+  }
+
+.mySlides {
     display: none;
-  }
+}
   
   .mySlides img {
-    width: 100%;
-  }
-  
+    width: auto; /* Largeur automatique */
+    height: auto; /* Hauteur automatique */
+    object-fit: contain; /* Ajuste l'image pour qu'elle remplisse son conteneur sans déformer l'image */
+    max-width: 100%; /* Largeur maximale de 100% */
+    max-height: 100%; /* Hauteur maximale de 100% */
+}
+
   /* Styles pour les animations du diaporama */
   .fade {
     animation: fade 1.5s linear infinite;

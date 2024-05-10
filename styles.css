@@ -356,6 +356,40 @@ a:hover {
 .project-image p {
     margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
 }
+/* Style pour l'effet de transition sur les éléments de la liste */
+#projects ul li {
+    transition: transform 0.3s ease;
+}
+
+/* Style pour l'effet lorsque la souris passe sur chaque élément */
+#projects ul li:hover {
+    transform: translateX(10px); /* Déplace chaque élément de la liste vers la droite de 10px */
+}
+/* Styles pour le diaporama d'images */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .mySlides img {
+    width: 100%;
+  }
+  
+  /* Styles pour les animations du diaporama */
+  .fade {
+    animation: fade 1.5s linear infinite;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
 
 
 

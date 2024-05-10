@@ -1,11 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mes projets</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS externe -->
 </head>
 <body>
-    
+
+    <header>
+        <h1>Lignel Flavien</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Portfolio</a></li>
+                <li><a href="projets.html">projets</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li id="bts-sio-dropdown">
+                    <a href="#">BTS SIO</a>
+                    <ul id="bts-sio-menu">
+                        <li><a href="E4.html">E4</a></li>
+                        <li><a href="E5.html">E5</a></li>
+                        <li><a href="SIO.html">BTS SIO ?</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projects">
+        <h2>Liste des Projets</h2>
+        <ul>
+            <li data-project-id="1">Réalisation d'un site web</li>
+            <li data-project-id="2">TP TodoList</li>
+            <li data-project-id="3">Site web réalisé en groupe</li>
+            <li data-project-id="4">Projet Wordpress</li>
+            <li data-project-id="5">Projet Zabbix</li>
+            <li data-project-id="6">Projet Sirotez&Melangez Administrateur</li>
+            <li data-project-id="7">Projet Sirotez&Melangez</li>
+            <li data-project-id="8">Portfolio</li>
+            <li data-project-id="9">GLPI</li>
+        </ul>
+    </section>
+    <section id="project-details" style="display: none;">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/P1.0.png" style="width:400px; height:300px;">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/P1.2.png" style="width:400px; height:300px;">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/P1.3.png" style="width:400px; height:300px;">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/P1.4.png" style="width:400px; height:300px;">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/P1.5.png" style="width:400px; height:300px;">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/P1.6.png" style="width:400px; height:300px;">
+            </div>
+
+    </section> <br> <br>
+
+    <footer>
+        <p>&copy; 2024 Lignel Flavien</p>
+    </footer>
+    <script src="projets.js"></script>
 </body>
 </html>

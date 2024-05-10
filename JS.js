@@ -30,7 +30,7 @@ btsSioDropdown.addEventListener('mouseout', () => {
     // Masquage du menu déroulant
     btsSioMenu.style.display = 'none';
 });
-var slideIndex = 0;
+var slideIndex = 1; // Initialise slideIndex à 1 au lieu de 0
 showSlides();
 
 function showSlides() {
@@ -44,6 +44,7 @@ function showSlides() {
     slides[slideIndex-1].style.display = "block";  
     setTimeout(showSlides, 4000); // Changez 2000 pour la durée de chaque image en millisecondes
 }
+
 // Récupération de tous les éléments de texte des options
 const optionTexts = document.querySelectorAll('#debouches ul li');
 
@@ -61,5 +62,3 @@ optionTexts.forEach(option => {
         option.style.backgroundColor = 'transparent';
     });
 });
-
-

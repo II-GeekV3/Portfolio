@@ -11,9 +11,28 @@ window.addEventListener('load', function() {
         projects.style.opacity = '1';
     }, 300);
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     const projectList = document.querySelectorAll('#projects ul li');
     const projectDetails = document.getElementById('project-details');
+
+    //Enregistrer une référence aux éléments de diaporama pour les projets Portfolio et Réalisation d'un site web
+    const portfolioSlides = document.querySelectorAll('.slideshow-container2 .mySlides');
+    const siteWebSlides = document.querySelectorAll('.slideshow-container .mySlides');
+
+    // Fonction pour réinitialiser le diaporama du projet Portfolio
+    function resetPortfolioSlides() {
+        slideIndex2 = 0;
+        showSlides2();
+    }
+
+    // Fonction pour réinitialiser le diaporama du projet Réalisation d'un site web
+    function resetSiteWebSlides() {
+        slideIndex = 0;
+        showSlides();
+    }
+
+    projectDetails.style.display = 'none';
 
     projectList.forEach(function(project) {
         project.addEventListener('click', function() {
@@ -49,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     `;
-                    showSlides(); // Ajoutez l'appel à showSlides() ici
+                    showSlides();
                     projectDetails.style.display = 'block';
                     break;
                 case '2':
@@ -79,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     `;
-                    showSlides(); // Ajoutez l'appel à showSlides() ici
                     projectDetails.style.display = 'block';
                     break;
                 case '3':
@@ -110,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     `;
-                    showSlides(); // Ajoutez l'appel à showSlides() ici
                     projectDetails.style.display = 'block';
                     break;
                 case '4':
@@ -122,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
                              <embed src="DOCUMENTATION WORDPRESS.pdf" type="application/pdf" />
                         </section>
                     `;
-                    showSlides(); // Ajoutez l'appel à showSlides() ici
                     projectDetails.style.display = 'block';
                     break;
                 case '5':
@@ -152,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     `;
-                    showSlides(); // Ajoutez l'appel à showSlides() ici
                     projectDetails.style.display = 'block';
                     break;
                 case '6':
@@ -162,7 +177,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         Ce projet est l'un des deux projets que j'ai choisis de présenter lors de mon épreuve E5 pour mon BTS. Je vous prie de consulter le projet directement sur ce lien <a href="E5.html">ici</a>.</p>
                         </p>                       
                     `;
-                    showSlides(); // Ajoutez l'appel à showSlides() ici
                     projectDetails.style.display = 'block';
                     break;
                 case '7':
@@ -172,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         Ce projet est l'un des deux projets que j'ai choisis de présenter lors de mon épreuve E5 pour mon BTS. Je vous prie de consulter le projet directement sur ce lien <a href="E5.html">ici</a>.</p> 
                         </p>
                     `;
-                    showSlides(); // Ajoutez l'appel à showSlides() ici
                     projectDetails.style.display = 'block';
                     break;  
                 case '8':
@@ -181,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>
                         Ce projet consitez a réalisé une TodoList a partir de python             
                         </p>
-                        <div class="slideshow-container">
+                        <div class="slideshow-container2">
                             <div class="mySlides fade">
                                 <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
                             </div>
@@ -202,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     `;
-                    showSlides(); // Ajoutez l'appel à showSlides() ici
+                    showSlides2();
                     projectDetails.style.display = 'block';
                     break;
                 case '9':
@@ -215,16 +228,23 @@ document.addEventListener('DOMContentLoaded', function() {
                              <embed src="TP_GLPI.pdf" type="application/pdf" />
                         </section>
                     `;
-                    showSlides(); // Ajoutez l'appel à showSlides() ici
                     projectDetails.style.display = 'block';
                     break;
                 // Ajoutez les cas pour les autres projets ici
                 default:
                     projectContent = '<p>Détails du projet non disponibles pour le moment.</p>';
+
+            if (projectId === '8') {
+                resetPortfolioSlides();
+            } else if (projectId === '1') {
+                resetSiteWebSlides();
+            }
+            
             }
 
             // Affiche le contenu spécifique du projet sélectionné
             projectDetails.innerHTML = projectContent;
+            projectDetails.style.display = 'block';
         });
     });
 });
@@ -240,4 +260,18 @@ function showSlides() {
         if (slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex-1].style.display = "block";
         setTimeout(showSlides, 4000); //
+}
+var slideIndex2 = 0;
+
+function showSlides2() {
+    // Fonction pour le diaporama du projet Portfolio
+    var i;
+    var slides = document.querySelectorAll('.slideshow-container2 .mySlides');
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex2++;
+    if (slideIndex2 > slides.length) { slideIndex2 = 1 }
+    slides[slideIndex2 - 1].style.display = "block";
+    setTimeout(showSlides2, 4000); // Changez 4000 pour la durée de chaque image en millisecondes
 }

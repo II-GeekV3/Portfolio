@@ -78,3 +78,20 @@ optionTexts.forEach(option => {
         option.style.backgroundColor = 'transparent';
     });
 });
+// Récupération de tous les paragraphes dans la section de veille
+const paragraphs = document.querySelectorAll('#veille p');
+
+// Ajout d'un écouteur d'événement pour chaque paragraphe
+paragraphs.forEach(paragraph => {
+    // Ajout d'un écouteur d'événement pour le survol de chaque paragraphe
+    paragraph.addEventListener('mouseover', () => {
+        // Ajout d'une classe pour appliquer un effet supplémentaire si nécessaire
+        paragraph.classList.add('hover-effect');
+    });
+
+    // Ajout d'un écouteur d'événement pour la fin du survol de chaque paragraphe
+    paragraph.addEventListener('mouseout', () => {
+        // Suppression de la classe pour réinitialiser l'effet
+        paragraph.classList.remove('hover-effect');
+    });
+});

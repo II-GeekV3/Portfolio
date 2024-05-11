@@ -403,8 +403,19 @@ a:hover {
     from {opacity: .4}
     to {opacity: 1}
   }
-  
+/* Style pour l'effet de rectangle autour des paragraphes */
+#veille p {
+    position: relative;
+    display: inline-block;
+}
 
-
-
-
+#veille p:hover::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid blue; /* Couleur et taille du rectangle */
+    box-sizing: border-box;
+}

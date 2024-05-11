@@ -16,20 +16,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectList = document.querySelectorAll('#projects ul li');
     const projectDetails = document.getElementById('project-details');
 
-    //Enregistrer une référence aux éléments de diaporama pour les projets Portfolio et Réalisation d'un site web
-    const portfolioSlides = document.querySelectorAll('.slideshow-container2 .mySlides');
-    const siteWebSlides = document.querySelectorAll('.slideshow-container .mySlides');
+    let slideIndex = 0;
+    let slideIndex2 = 0;
 
-    // Fonction pour réinitialiser le diaporama du projet Portfolio
-    function resetPortfolioSlides() {
-        slideIndex2 = 0;
-        showSlides2();
+    // Fonction pour afficher les diapositives du projet Réalisation d'un site web
+    function showSlides() {
+        let slides = document.querySelectorAll('.slideshow-container .mySlides');
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = 'block';
+        setTimeout(showSlides, 4000); // Changez 4000 pour la durée de chaque image en millisecondes
     }
 
-    // Fonction pour réinitialiser le diaporama du projet Réalisation d'un site web
-    function resetSiteWebSlides() {
+    // Fonction pour afficher les diapositives du projet Portfolio
+    function showSlides2() {
+        let slides = document.querySelectorAll('.slideshow-container2 .mySlides');
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slideIndex2++;
+        if (slideIndex2 > slides.length) { slideIndex2 = 1; }
+        slides[slideIndex2 - 1].style.display = 'block';
+        setTimeout(showSlides2, 4000); // Changez 4000 pour la durée de chaque image en millisecondes
+    }
+
+    function resetSlides(){
         slideIndex = 0;
-        showSlides();
+        slideIndex2 = 0;
+    }
+
+    function afficherProjet(id) {
+        const Projet = document.querySelector(`#projects ul li[data-project-id="${id}"]`);
     }
 
     projectDetails.style.display = 'none';
@@ -37,7 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
     projectList.forEach(function(project) {
         project.addEventListener('click', function() {
             const projectId = project.getAttribute('data-project-id');
-
+            afficherProjet(projectId);
+            resetSlides();
             // Détermine le contenu spécifique du projet sélectionné
             let projectContent = '';
             switch (projectId) {
@@ -49,22 +70,42 @@ document.addEventListener('DOMContentLoaded', function() {
                         </p>
                         <div class="slideshow-container">
                             <div class="mySlides fade">
-                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                                <img src="images/P1.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                             </div>
                             <div class="mySlides fade">
-                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                                <img src="images/P1.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                             </div>
                             <div class="mySlides fade">
-                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                                <img src="images/P1.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                             </div>
                             <div class="mySlides fade">
-                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                                <img src="images/P1.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                             </div>
                             <div class="mySlides fade">
-                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                                <img src="images/P1.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                             </div>
                             <div class="mySlides fade">
-                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                                <img src="images/P1.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container2">
+                            <div class="mySlides fade">
+                                <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
                             </div>
                         </div>
                     `;
@@ -97,103 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
                             </div>
                         </div>
-                    `;
-                    projectDetails.style.display = 'block';
-                    break;
-                case '3':
-                    projectContent = `
-                        <h3>Détails du Projet : Site web réalisé en groupe</h3>
-                        <p>
-                        Ce projet consitez a réalisé une TodoList a partir de python 
-
-                        </p>
-                        <div class="slideshow-container">
-                            <div class="mySlides fade">
-                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                        </div>
-                    `;
-                    projectDetails.style.display = 'block';
-                    break;
-                case '4':
-                    projectContent = `
-                        <h3>Détails du Projet : Projet Wordpress</h3>
-                        <p>
-                        Ce projet est un travail réalisé en groupe, où chacun a contribué avec plusieurs pages créées individuellement, comprenant des liens internes obligatoires, ainsi que la mise en service d'un site sous WordPress.                        </p>
-                        <section id="cv">
-                             <embed src="DOCUMENTATION WORDPRESS.pdf" type="application/pdf" />
-                        </section>
-                    `;
-                    projectDetails.style.display = 'block';
-                    break;
-                case '5':
-                    projectContent = `
-                        <h3>Détails du Projet : Projet Zabbix</h3>
-                        <p>
-                        Ce projet consitez a réalisé une TodoList a partir de python 
-                        </p>
-                        <div class="slideshow-container">
-                            <div class="mySlides fade">
-                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                        </div>
-                    `;
-                    projectDetails.style.display = 'block';
-                    break;
-                case '6':
-                     projectContent = `
-                        <h3>Détails du Projet : Projet Sirotez&Melangez Administrateur</h3>
-                        <p>
-                        Ce projet est l'un des deux projets que j'ai choisis de présenter lors de mon épreuve E5 pour mon BTS. Je vous prie de consulter le projet directement sur ce lien <a href="E5.html">ici</a>.</p>
-                        </p>                       
-                    `;
-                    projectDetails.style.display = 'block';
-                    break;
-                case '7':
-                    projectContent = `
-                        <h3>Détails du Projet : Projet Sirotez&Melangez</h3>
-                        <p>
-                        Ce projet est l'un des deux projets que j'ai choisis de présenter lors de mon épreuve E5 pour mon BTS. Je vous prie de consulter le projet directement sur ce lien <a href="E5.html">ici</a>.</p> 
-                        </p>
-                    `;
-                    projectDetails.style.display = 'block';
-                    break;  
-                case '8':
-                    projectContent = `
-                        <h3>Détails du Projet : Portfolio</h3>
-                        <p>
-                        Ce projet consitez a réalisé une TodoList a partir de python             
-                        </p>
                         <div class="slideshow-container2">
                             <div class="mySlides fade">
                                 <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
@@ -215,8 +159,308 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     `;
-                    showSlides2();
                     projectDetails.style.display = 'block';
+                    break;
+                case '3':
+                    projectContent = `
+                        <h3>Détails du Projet : Site web réalisé en groupe</h3>
+                        <p>
+                        Site web speed run rétro est un projet réalisé en équipe de trois (2 développeurs, 1 expert réseau), nous avons créé un site web de speed run sur le thème rétro. Utilisant HTML, CSS et PHP, nous avons conçu une plateforme présentant les jeux populaires, les classements des meilleurs temps et des guides pour les passionnés. Le site offre une esthétique rétro immersive, capturant l'essence des jeux classiques.
+
+                        </p>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container2">
+                            <div class="mySlides fade">
+                                <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                    `;
+                    projectDetails.style.display = 'block';
+                    break;
+                case '4':
+                    projectContent = `
+                        <h3>Détails du Projet : Projet Wordpress</h3>
+                        <p>
+                        Ce projet est un travail réalisé en groupe, où chacun a contribué avec plusieurs pages créées individuellement, comprenant des liens internes obligatoires, ainsi que la mise en service d'un site sous WordPress.                        </p>
+                        <section id="cv">
+                             <embed src="DOCUMENTATION WORDPRESS.pdf" type="application/pdf" />
+                        </section>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container2">
+                            <div class="mySlides fade">
+                                <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                    `;
+                    projectDetails.style.display = 'block';
+                    break;
+                case '5':
+                    projectContent = `
+                        <h3>Détails du Projet : Projet Zabbix</h3>
+                        <p>
+                        Notre projet Zabbix vise à garantir la stabilité et la performance des réseaux informatiques. En utilisant la puissance de Zabbix, une solution de surveillance open-source, nous avons mis en place un système robuste de supervision en temps réel. Grâce à des fonctionnalités avancées telles que la collecte de données, l'analyse des performances et les alertes personnalisables, notre projet offre une visibilité complète sur l'état de santé du réseau. En collaborant avec des équipes de gestion IT, nous avons mis en œuvre des solutions proactives pour résoudre les problèmes de manière efficace, minimisant ainsi les temps d'arrêt et optimisant les performances du réseau.
+                        </p>
+                        <section id="cv">
+                             <embed src="" type="application/pdf" />
+                        </section>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container2"style="display: none;">
+                            <div class="mySlides fade">
+                                <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                    `;
+                    projectDetails.style.display = 'block';
+                    break;
+                case '6':
+                     projectContent = `
+                        <h3>Détails du Projet : Projet Sirotez&Melangez Administrateur</h3>
+                        <p>
+                        Ce projet est l'un des deux projets que j'ai choisis de présenter lors de mon épreuve E5 pour mon BTS. Je vous prie de consulter le projet directement sur ce lien <a href="E5.html">ici</a>.</p>
+                        </p>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container2"style="display: none;">
+                            <div class="mySlides fade">
+                                <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>                       
+                    `;
+                    projectDetails.style.display = 'block';
+                    break;
+                case '7':
+                    projectContent = `
+                        <h3>Détails du Projet : Projet Sirotez&Melangez</h3>
+                        <p>
+                        Ce projet est l'un des deux projets que j'ai choisis de présenter lors de mon épreuve E5 pour mon BTS. Je vous prie de consulter le projet directement sur ce lien <a href="E5.html">ici</a>.</p> 
+                        </p>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container2"style="display: none;">
+                            <div class="mySlides fade">
+                                <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                    `;
+                    projectDetails.style.display = 'block';
+                    break;  
+                case '8':
+                    projectContent = `
+                        <h3>Détails du Projet : Portfolio</h3>
+                        <p>
+                        Le projet Portfolio est bien plus qu'un simple site web ; c'est votre carte de visite numérique, votre vitrine professionnelle en ligne. Conçu avec soin et attention aux détails, ce portfolio met en valeur vos compétences, vos réalisations et votre parcours professionnel de manière attrayante et professionnelle. Avec une conception responsive et une navigation intuitive, ce site offre une expérience utilisateur fluide sur tous les appareils. Que vous soyez un développeur, un designer, un écrivain ou tout autre professionnel créatif, ce portfolio est l'outil idéal pour présenter votre travail au monde entier.     
+                        </p>
+                        <div class="slideshow-container2">
+                            <div class="mySlides fade">
+                                <img src="images/P8.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P8.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                    `;
+                    projectDetails.style.display = 'block';
+                    showSlides2();
                     break;
                 case '9':
                     projectContent = `
@@ -227,51 +471,57 @@ document.addEventListener('DOMContentLoaded', function() {
                         <section id="cv">
                              <embed src="TP_GLPI.pdf" type="application/pdf" />
                         </section>
+                        <div class="slideshow-container">
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P1.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P1.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P1.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P1.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container2"style="display: none;">
+                            <div class="mySlides fade">
+                                <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                            <div class="mySlides fade"style="display: none;">
+                                <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
                     `;
                     projectDetails.style.display = 'block';
                     break;
                 // Ajoutez les cas pour les autres projets ici
                 default:
                     projectContent = '<p>Détails du projet non disponibles pour le moment.</p>';
-
-            if (projectId === '8') {
-                resetPortfolioSlides();
-            } else if (projectId === '1') {
-                resetSiteWebSlides();
-            }
             
             }
-
             // Affiche le contenu spécifique du projet sélectionné
             projectDetails.innerHTML = projectContent;
             projectDetails.style.display = 'block';
         });
     });
 });
-var slideIndex = 0;
-
-function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 4000); //
-}
-var slideIndex2 = 0;
-
-function showSlides2() {
-    // Fonction pour le diaporama du projet Portfolio
-    var i;
-    var slides = document.querySelectorAll('.slideshow-container2 .mySlides');
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex2++;
-    if (slideIndex2 > slides.length) { slideIndex2 = 1 }
-    slides[slideIndex2 - 1].style.display = "block";
-    setTimeout(showSlides2, 4000); // Changez 4000 pour la durée de chaque image en millisecondes
-}

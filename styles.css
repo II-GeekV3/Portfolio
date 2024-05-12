@@ -419,3 +419,83 @@ a:hover {
     border: 2px solid blue; /* Couleur et taille du rectangle */
     box-sizing: border-box;
 }
+.github-logo {
+    width: 100px; /* Définissez la largeur souhaitée */
+    height: auto; /* Laissez la hauteur se calculer automatiquement pour maintenir les proportions de l'image */
+    display: block; /* Pour centrer l'image */
+    margin: 0 auto; /* Pour centrer l'image horizontalement */
+}
+.quality-image {
+    max-width: 200px; /* Définissez la largeur maximale souhaitée */
+    max-height: 200px; /* Définissez la hauteur maximale souhaitée */
+    width: auto; /* Pour maintenir les proportions de l'image */
+    height: auto; /* Pour maintenir les proportions de l'image */
+    object-fit: contain; /* Pour conserver les proportions de l'image et la centrer */
+}
+.interest-image {
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+#veille h2 {
+    text-align: center; /* Centrer le titre */
+}
+
+#veille p {
+    text-align: justify; /* Justifier le texte */
+    margin: 0 auto; /* Centrer le texte horizontalement */
+    max-width: 800px; /* Limiter la largeur maximale du texte */
+}
+#veille .text-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+body.page-e4 {
+    background-image: url('images/Test.jpg');
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le corps */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-position: center;
+    background-attachment: fixed;
+}
+#options {
+    text-align: center; /* Centre les éléments à l'intérieur de la section */
+}
+
+.option {
+    display: inline-block; /* Permet aux options d'être alignées horizontalement */
+    text-align: left; /* Aligne le texte à gauche à l'intérieur de chaque option */
+    max-width: 600px; /* Limite la largeur des options pour une meilleure lisibilité */
+    margin: 0 auto; /* Centre les options horizontalement */
+}
+
+.option-title {
+    display: flex; /* Utilisez le modèle de boîte flexible */
+    align-items: center; /* Alignez verticalement les éléments */
+    justify-content: center; /* Alignez horizontalement les éléments */
+    height: 100px; /* Définissez la hauteur souhaitée pour les titres */
+    margin-bottom: 10px; /* Ajoutez une marge en bas pour l'espace entre les titres et les descriptions */
+}
+
+
+.option-description {
+    text-align: justify; /* Justifie le texte */
+}
+#debouches {
+    text-align: center; /* Centrer le contenu horizontalement */
+}
+
+#debouches h2 {
+    margin-bottom: 20px; /* Ajouter une marge en bas pour l'espace entre le titre et les listes */
+}
+
+#debouches ul {
+    list-style-type: none; /* Supprimer les puces de la liste */
+    padding: 0; /* Supprimer le padding par défaut */
+}
+
+#debouches ul li {
+    margin-bottom: 10px; /* Ajouter une marge en bas pour l'espace entre les éléments de la liste */
+}

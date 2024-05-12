@@ -21,6 +21,8 @@ body {
     line-height: 1.6;
     background-color: #f8f8f8;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -32,11 +34,13 @@ header {
 
 nav ul {
     list-style-type: none;
+    padding: 0;
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 nav ul li a {
@@ -45,7 +49,7 @@ nav ul li a {
 }
 
 section {
-    padding: 50px;
+    padding: 20px;
 }
 
 section h2 {
@@ -498,4 +502,48 @@ body.page-e4 {
 
 #debouches ul li {
     margin-bottom: 10px; /* Ajouter une marge en bas pour l'espace entre les éléments de la liste */
+}
+/* Définir une taille de police de base pour le texte */
+html {
+    font-size: 16px;
+}
+/* Pour les petits écrans, ajustez la taille de la police */
+@media  screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* Pour les petits écran, ajustez la taille des titres */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5rem;
+}
+
+/* Réoganisation des éléments de navigations pour les petits écrans*/
+@media screen and (max-width: 768px) {
+    nav ul li {
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        padding: 10px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }

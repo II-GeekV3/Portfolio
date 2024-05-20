@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let slideIndex = 0;
     let slideIndex2 = 0;
+    let slideIndex3 = 0;
 
     // Fonction pour afficher les diapositives du projet Réalisation d'un site web
     function showSlides() {
@@ -43,13 +44,25 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(showSlides2, 4000); // Changez 4000 pour la durée de chaque image en millisecondes
     }
 
+    function showSlides3() {
+        let slides = document.querySelectorAll('.slideshow-container3 .mySlides');
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slideIndex3++;
+        if (slideIndex3 > slides.length) { slideIndex3 = 1; }
+        slides[slideIndex3 - 1].style.display ='block';
+        setTimeout(showSlides3, 4000);
+    }
+
     function resetSlides(){
         slideIndex = 0;
         slideIndex2 = 0;
+        slideIndex3 = 0;
     }
 
     function afficherProjet(id) {
-        const Projet = document.querySelector(`#projects ul li[data-project-id="${id}"]`);
+        const Projet = document.querySelector(`#projects ul li[data-project-id="${id}"]`);    
     }
 
     projectDetails.style.display = 'none';
@@ -64,48 +77,73 @@ document.addEventListener('DOMContentLoaded', function() {
             switch (projectId) {
                 case '1':
                     projectContent = `
-                        <h3 style="text-align: center;">Détails du Projet : Réalisation d'un site web</h3>
-                        <p style="text-align: justify; margin: 0 auto; max-width: 800px;">
-                        Ceci est le premier site et projet réalisé au cours de mes 2 années en BTS. Ce site est un site vitrine qui décrit le jeu Overwatch. On y retrouve la description de toutes les cartes, de tous les personnages (Heal, DPS ou Tank), et bien sûr tous les modes de jeux possibles, avec une vidéo de visite de chaque carte et un gameplay de chaque personnage. PS : (Les images de fond n'ont rien à voir avec le thème, je le reconnais).
-                        </p>
-                        <div class="slideshow-container">
-                            <div class="mySlides fade">
-                                <img src="images/P1.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                        <div class="project-content">
+                            <h3 style="text-align: center;">Détails du Projet : Réalisation d'un site web</h3>
+                            <p style="text-align: justify; margin: 0 auto; max-width: 800px;">
+                            Ceci est le premier site et projet réalisé au cours de mes 2 années en BTS. Ce site est un site vitrine qui décrit le jeu Overwatch. On y retrouve la description de toutes les cartes, de tous les personnages (Heal, DPS ou Tank), et bien sûr tous les modes de jeux possibles, avec une vidéo de visite de chaque carte et un gameplay de chaque personnage. PS : (Les images de fond n'ont rien à voir avec le thème, je le reconnais).
+                            </p>
+                            <div class="slideshow-container">
+                                <div class="mySlides fade">
+                                    <img src="images/P1.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="images/P1.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="images/P1.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="images/P1.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="images/P1.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="images/P1.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
                             </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            <div class="slideshow-container2" style="display: none;">
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                                </div>
                             </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="images/P1.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
-                            </div>
-                        </div>
-                        <div class="slideshow-container2" style="display: none;">
-                            <div class="mySlides fade" style="display: none;">
-                                <img src="images/P8.0.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade" style="display: none;">
-                                <img src="images/P8.2.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade" style="display: none;">
-                                <img src="images/P8.3.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade" style="display: none;">
-                                <img src="images/P8.4.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade" style="display: none;">
-                                <img src="images/P8.5.png" style="width:100%; height:300px; object-fit: cover;">
-                            </div>
-                            <div class="mySlides fade" style="display: none;">
-                                <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            <div class="slideshow-container3" style="display: none;">
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P3.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P3.1.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P3.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P3.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P3.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P3.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
+                                <div class="mySlides fade" style="display: none;">
+                                    <img src="images/P3.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                                </div>
                             </div>
                         </div>
                     `;
@@ -118,6 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p style="text-align: justify; margin: 0 auto; max-width: 800px;">
                         Ce projet consitez a réalisé une TodoList a partir de python: La TodoList, ou liste de tâches, est un outil simple et pratique pour organiser vos activités quotidiennes. En notant vos tâches à accomplir, vous pouvez garder une vue d'ensemble sur vos obligations et rester concentré sur vos priorités.
                         </p>
+                        <a href="https://github.com/II-GeekV3/TodoList">
+                            <img class="github-logo" src="images/LogoGithub.png" alt="Voir plus" />
+                        </a>
                         <div class="slideshow-container" style="display: none;">
                             <div class="mySlides fade" style="display: none;">
                                 <img src="images/P1.0.png" style="width:100%; height:300px; object-fit: cover;">
@@ -158,6 +199,29 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
                             </div>
                         </div>
+                        <div class="slideshow-container3" style="display: none;">
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.1.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                        </div>
                     `;
 
                     break;
@@ -166,7 +230,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3 style="text-align: center;">Détails du Projet : Site web réalisé en groupe</h3>
                         <p style="text-align: justify; margin: 0 auto; max-width: 800px;">
                         Site web speed run rétro est un projet réalisé en équipe de trois (2 développeurs, 1 expert réseau), nous avons créé un site web de speed run sur le thème rétro. Utilisant HTML, CSS et PHP, nous avons conçu une plateforme présentant les jeux populaires, les classements des meilleurs temps et des guides pour les passionnés. Le site offre une esthétique rétro immersive, capturant l'essence des jeux classiques.
-
                         </p>
                         <div class="slideshow-container" style="display: none;">
                             <div class="mySlides fade" style="display: none;">
@@ -208,7 +271,31 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
                             </div>
                         </div>
+                        <div class="slideshow-container3">
+                            <div class="mySlides fade">
+                                <img src="images/P3.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P3.1.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P3.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P3.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P3.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P3.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="images/P3.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                        </div>
                     `;
+                    showSlides3();
                     projectDetails.style.display = 'block';
                     break;
                 case '4':
@@ -257,6 +344,29 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div class="mySlides fade" style="display: none;">
                                 <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container3" style="display: none;">
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.1.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                             </div>
                         </div>
                     `;
@@ -311,6 +421,29 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
                             </div>
                         </div>
+                        <div class="slideshow-container3" style="display: none;">
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.1.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                        </div>
                     `;
                     projectDetails.style.display = 'block';
                     break;
@@ -358,6 +491,29 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div class="mySlides fade"style="display: none;">
                                 <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container3" style="display: none;">
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.1.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                             </div>
                         </div>                       
                     `;
@@ -414,6 +570,29 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
                             </div>
                         </div>
+                        <div class="slideshow-container3" style="display: none;">
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.1.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                        </div>
                     `;
                     projectDetails.style.display = 'block';
                     break;  
@@ -461,6 +640,29 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div class="mySlides fade" style="display: none;">
                                 <img src="images/P1.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container3" style="display: none;">
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.1.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                             </div>
                         </div>
                     `;
@@ -514,6 +716,29 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div class="mySlides fade"style="display: none;">
                                 <img src="images/P8.6.png" style="width:100%; height:300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="slideshow-container3" style="display: none;">
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.0.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.1.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.2.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.3.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.4.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.5.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                            </div>
+                            <div class="mySlides fade" style="display: none;">
+                                <img src="images/P3.6.png" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                             </div>
                         </div>
                     `;

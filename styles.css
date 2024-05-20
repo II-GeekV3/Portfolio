@@ -375,6 +375,7 @@ a:hover {
     justify-content: center; /* Centrer le contenu horizontalement */
     align-items: center; /* Centrer le contenu verticalement */
     height: 100vh
+    
   }
 .slideshow-container2 {
     max-width: 1000px;
@@ -386,11 +387,20 @@ a:hover {
     height: 100vh
   }
 
+.slideshow-container3 {
+    max-width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    display: flex; /* Utiliser le modèle de boîte flexible */
+    justify-content: center; /* Centrer le contenu horizontalement */
+    align-items: center; /* Centrer le contenu verticalement */
+    height: 100vh
+  }
 .mySlides {
     display: none;
 }
   
-  .mySlides img {
+.mySlides img {
     width: auto; /* Largeur automatique */
     height: auto; /* Hauteur automatique */
     object-fit: contain; /* Ajuste l'image pour qu'elle remplisse son conteneur sans déformer l'image */
@@ -546,4 +556,15 @@ h1, h2, h3, h4, h5, h6 {
 img {
     max-width: 100%;
     height: auto;
+}
+@media screen and (max-width: 768px) {
+    .project-content {
+        padding: 10px; /* Réduisez le padding pour les petits écrans */
+    }
+
+    .slideshow-container {
+        flex-direction: column; /* Mettez les slides en colonne */
+        height: auto; /* Ajustez la hauteur automatiquement */
+        margin-top: 10px; /* Réduisez l'espace en haut du diaporama */
+    }
 }
